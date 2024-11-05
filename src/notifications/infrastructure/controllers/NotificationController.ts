@@ -3,7 +3,7 @@ import { SendNotification } from "../../application/SendNotification";
 
 export class NotificationController {
 
-    constructor(private sendNotification: SendNotification) {}
+    constructor(private sendNotification: SendNotification) { }
 
     async handle(req: Request, res: Response): Promise<Response> {
         const { to, message } = req.body;

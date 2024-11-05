@@ -9,5 +9,5 @@ const notificationService = new TwilioNotificationService();
 const sendNotification = new SendNotification(notificationService);
 const sendNotificationController = new NotificationController(sendNotification)
 
-notificationRouter.post("/send", (req, res) => { sendNotificationController.handle(req, res) });
+notificationRouter.post("/send", sendNotificationController.handle.bind(sendNotificationController));
 

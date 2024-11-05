@@ -13,7 +13,7 @@ export class TwilioNotificationService implements NotificationService {
         await this.client.messages.create({
             from: `whatsapp:${process.env.TWILIO_WHATSAPP_NUMBER}`,
             to: `whatsapp:${notification.to}`,
-            body: notification.message,
+            body: `Tu codigo de verificación es: ${notification.message}`,
         });
     }
 }
